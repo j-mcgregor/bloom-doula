@@ -25,6 +25,7 @@ export interface LinkIF {
 export interface ContactIF {
     contact_label: RichTextBlock[];
     contact_link: LinkIF;
+    contact_value: RichTextBlock[];
 }
 
 export interface BodyIF {

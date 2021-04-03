@@ -43,7 +43,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 rightBackgroundImage={data.about_image.url}
                 rightHeight="h-screen"
                 leftElement={
-                    <div className="relative sm:absolute p-5 sm:p-10 w-full sm:w-3/6 flex flex-col items-center sm:items-start tracking-widest">
+                    <div className="relative sm:absolute p-1 sm:p-10 w-full sm:w-3/6 flex flex-col items-center sm:items-start tracking-widest">
                         <img src={data.logo.url} alt={data.logo.alt} width="110" />
                         <div className="text-gray-800 uppercase text-4xl font-bold font-primaryBold my-6">
                             <RichText render={data.about_title} />
@@ -61,9 +61,9 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 rightHeight="h-10"
                 rightWidth="w-full"
             >
-                <div className="relative sm:absolute bg-white p-10 mt-6 w-full sm:w-10/12 flex justify-center content-center flex-col tracking-widest">
+                <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 flex justify-center content-center flex-col tracking-widest">
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
-                    <div className="text-gray-800 uppercase text-6xl font-bold text-center font-primaryBold my-6">
+                    <div className="text-gray-800 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-6">
                         <RichText render={data.services_title} />
                     </div>
                     <div className="flex flex-col sm:flex-row justify-center py-10">
@@ -99,9 +99,9 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 rightBackgroundColor={common.colors["skin-tone-1"]}
                 hideLeftOnSmall
             >
-                <div className="relative sm:absolute bg-white p-10 mt-6 w-full sm:w-10/12 h-5/6 flex justify-start content-center flex-col tracking-widest">
+                <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 h-5/6 flex justify-start content-center flex-col tracking-widest">
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
-                    <div className="text-gray-800 uppercase text-6xl font-bold text-center font-primaryBold my-7">
+                    <div className="text-gray-800 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-7">
                         <RichText render={data.body[0].primary.title} />
                     </div>
                     <div className="text-gray-400 text-lg text-justify font-primaryRegular">
@@ -118,9 +118,9 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 hideLeftOnSmall
                 rightWidth="w-full"
             >
-                <div className="relative sm:absolute bg-white p-10 mt-6 w-full sm:w-10/12 h-5/6 flex justify-start content-center flex-col tracking-widest">
+                <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 h-5/6 flex justify-start content-center flex-col tracking-widest">
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
-                    <div className="text-gray-800 uppercase text-6xl font-bold text-center font-primaryBold my-7">
+                    <div className="text-gray-800 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-7">
                         <RichText render={data.body[1].primary.title} />
                     </div>
                     <div className="text-gray-400 text-lg text-justify font-primaryRegular">
@@ -138,7 +138,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 leftWidth="w-full"
                 rightBackgroundColor={common.colors["skin-tone-1"]}
                 rightElement={
-                    <div className="w-full h-full p-10 text-right flex flex-col sm:content-end justify-between tracking-widest">
+                    <div className="w-full h-full p-2 sm:p-10 text-right flex flex-col sm:content-end justify-between tracking-widest">
                         <div>
                             <img
                                 src={data.logo.url}
@@ -160,7 +160,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
-                                            {contact.contact_link.url}
+                                            <RichText render={contact.contact_value} />
                                         </a>
                                     </div>
                                 </div>
