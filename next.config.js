@@ -1,5 +1,7 @@
 const withPlugins = require("next-compose-plugins");
 
-const config = {};
+const config = {
+    target: "serverless",
+};
 
 module.exports = withPlugins([], config);
