@@ -7,6 +7,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import Prismic from "@prismicio/client";
 import { MainData } from "@interfaces/prismic-data";
 import { RichText } from "prismic-reactjs";
+import Head from "next/head";
 
 const socialMap = (url: string) => {
     if (url.includes("facebook")) {
@@ -21,6 +22,9 @@ const socialMap = (url: string) => {
 const Home: React.FC<{ data: MainData }> = ({ data }) => {
     return (
         <Container>
+            <Head>
+                <title>Bloom Births</title>
+            </Head>
             <Section
                 leftBackgroundImage={data.primary_image.url}
                 leftHeight="h-screen"
