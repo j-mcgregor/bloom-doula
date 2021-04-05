@@ -1,2 +1,2 @@
 export { Container } from "./container";
-export { SplitSection } from "./section/SplitSection";
+export { Section } from "./section/Section";

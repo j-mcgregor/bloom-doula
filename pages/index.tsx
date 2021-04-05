@@ -1,13 +1,12 @@
-import { Container } from "@components";
-import { Section } from "@components/section/Section";
+import { Container, Section } from "@components";
 import { common } from "@definitions/styled-components";
+import { MainData } from "@interfaces/prismic-data";
+import Prismic from "@prismicio/client";
+import Head from "next/head";
 import { Client } from "prismic-configuration";
+import { RichText } from "prismic-reactjs";
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import Prismic from "@prismicio/client";
-import { MainData } from "@interfaces/prismic-data";
-import { RichText } from "prismic-reactjs";
-import Head from "next/head";
 
 const socialMap = (url: string) => {
     if (url.includes("facebook")) {
@@ -30,8 +29,13 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 leftHeight="h-screen"
                 rightBackgroundColor={common.colors["skin-tone-2"]}
                 hideRightOnSmall
+                edge={{
+                    backgroundColor: common.colors["skin-tone-2"],
+                    horizontal: "left",
+                    vertical: "top",
+                }}
             >
-                <div className="absolute bg-white p-10 w-10/12 sm:w-8/12 flex justify-center items-center flex-col text-center tracking-widest">
+                <div className="absolute bg-white p-10 w-10/12 sm:w-8/12 flex justify-center items-center flex-col text-center tracking-widest z-30">
                     <img src={data.logo.url} alt={data.logo.alt} width="150" className="mx-auto" />
                     <div className="text-gray-800 uppercase text-7xl font-bold font-primaryBold tracking-widest my-10">
                         <RichText render={data.primary_title} />
@@ -47,8 +51,8 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 rightBackgroundImage={data.about_image.url}
                 rightHeight="h-screen"
                 leftElement={
-                    <div className="relative sm:absolute p-1 sm:p-10 w-full sm:w-3/6 flex flex-col items-center sm:items-start tracking-widest">
-                        <img src={data.logo.url} alt={data.logo.alt} width="110" />
+                    <div className="relative sm:absolute p-1 sm:p-10 w-full  flex flex-col items-center sm:items-start tracking-widest">
+                        <img src="/logo-clipped-light.png" alt={data.logo.alt} width="110" />
                         <div className="text-gray-800 uppercase text-4xl font-bold font-primaryBold my-6">
                             <RichText render={data.about_title} />
                         </div>
@@ -57,15 +61,25 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                         </div>
                     </div>
                 }
+                edge={{
+                    backgroundColor: common.colors["skin-tone-3"],
+                    horizontal: "right",
+                    vertical: "bottom",
+                }}
             />
             <Section
                 leftBackgroundColor={common.colors["skin-tone-1"]}
                 rightBackgroundColor={common.colors["skin-tone-3"]}
                 hideLeftOnSmall
                 rightHeight="h-10"
-                rightWidth="w-full"
+                rightWidth="w-full sm:w-1/2"
+                edge={{
+                    backgroundColor: common.colors["skin-tone-1"],
+                    horizontal: "right",
+                    vertical: "top",
+                }}
             >
-                <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 flex justify-center content-center flex-col tracking-widest">
+                <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 flex justify-center content-center flex-col tracking-widest z-20">
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
                     <div className="text-gray-800 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-6">
                         <RichText render={data.services_title} />
@@ -102,8 +116,13 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 leftBackgroundColor={common.colors["skin-tone-3"]}
                 rightBackgroundColor={common.colors["skin-tone-1"]}
                 hideLeftOnSmall
+                edge={{
+                    backgroundColor: common.colors["skin-tone-1"],
+                    horizontal: "left",
+                    vertical: "bottom",
+                }}
             >
-                <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 h-5/6 flex justify-start content-center flex-col tracking-widest">
+                <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 h-5/6 flex justify-start content-center flex-col tracking-widest z-20">
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
                     <div className="text-gray-800 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-7">
                         <RichText render={data.body[0].primary.title} />
@@ -120,9 +139,14 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 leftBackgroundColor={common.colors["skin-tone-2"]}
                 rightBackgroundColor={common.colors["skin-tone-3"]}
                 hideLeftOnSmall
-                rightWidth="w-full"
+                rightWidth="w-full sm:w-1/2"
+                edge={{
+                    backgroundColor: common.colors["skin-tone-3"],
+                    horizontal: "left",
+                    vertical: "top",
+                }}
             >
-                <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 h-5/6 flex justify-start content-center flex-col tracking-widest">
+                <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 h-5/6 flex justify-start content-center flex-col tracking-widest z-20">
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
                     <div className="text-gray-800 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-7">
                         <RichText render={data.body[1].primary.title} />
@@ -139,7 +163,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 reverse
                 leftBackgroundImage={data.contact_image.url}
                 leftHeight="h-96"
-                leftWidth="w-full"
+                leftWidth="w-full sm:w-1/2"
                 rightBackgroundColor={common.colors["skin-tone-1"]}
                 rightElement={
                     <div className="w-full h-full p-2 sm:p-10 text-right flex flex-col sm:content-end justify-between tracking-widest">
@@ -184,6 +208,11 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                         </div>
                     </div>
                 }
+                edge={{
+                    backgroundColor: common.colors["skin-tone-1"],
+                    horizontal: "left",
+                    vertical: "bottom",
+                }}
             />
         </Container>
     );
