@@ -7,3 +7,13 @@
     font-family: "PassionSansPDak-Bold";
     src: url("/fonts/PassionSansPDaa-Hairline/PassionSansPDak-Bold.ttf");
 }
+
+@font-face {
+    font-family: "FiraSans-Thin";
+    src: url("/fonts/FiraSans-Thin.ttf");
+}
+
+@font-face {
+    font-family: "FiraSans-Light";
+    src: url("/fonts/FiraSans-Light.ttf");
+}

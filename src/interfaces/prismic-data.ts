@@ -38,6 +38,7 @@ export interface BodyIF {
         subtitle: RichTextBlock[];
         description: RichTextBlock[];
         button_label: RichTextBlock[];
+        page_link: RichTextBlock[];
         button_link: LinkIF;
         find_out_more: RichTextBlock[];
     };

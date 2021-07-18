@@ -9,8 +9,8 @@ module.exports = {
                 "skin-tone-3": "#7d695f",
             },
             fontFamily: {
-                primaryBold: ["PassionSansPDak-Bold"],
-                primaryRegular: ["PassionSansPDaa-Hairline"],
+                primaryBold: ["FiraSans-Light"],
+                primaryRegular: ["FiraSans-Thin"],
             },
         },
     },
