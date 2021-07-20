@@ -24,7 +24,7 @@ const About: React.FC<{ data: MainData }> = ({ data }) => {
                 reverse
                 leftBackgroundColor={common.colors["skin-tone-3"]}
                 rightBackgroundImage={data.about_image.url}
-                rightHeight="h-screen"
+                backgroundPosition="center 30%"
                 leftElement={
                     <div className="relative sm:absolute p-1 sm:p-10 w-full  flex flex-col items-center justify-center sm:items-start sm:justify-center h-5/6 tracking-widest">
                         <img src="/logo-clipped-light.png" alt={data.logo.alt} width="110" />
@@ -37,7 +37,9 @@ const About: React.FC<{ data: MainData }> = ({ data }) => {
                     backgroundColor: common.colors["skin-tone-3"],
                     horizontal: "right",
                     vertical: "bottom",
+                    height: 700,
                 }}
+                height={700}
             />
 
             <StyledParagraphs className="text-gray-800 w-1/2 mx-auto py-20 text-lg font-primaryRegular text-justify">

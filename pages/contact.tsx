@@ -78,7 +78,9 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
                     backgroundColor: common.colors["skin-tone-1"],
                     horizontal: "left",
                     vertical: "bottom",
+                    height: 800,
                 }}
+                height={800}
             />
         </Container>
     );

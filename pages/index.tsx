@@ -23,9 +23,12 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                     backgroundColor: common.colors["skin-tone-2"],
                     horizontal: "left",
                     vertical: "top",
+                    height: 1000,
                 }}
+                height={1000}
+                equalWidth
             >
-                <div className="absolute bg-white p-10 w-10/12 sm:w-8/12 flex justify-center items-center flex-col text-center tracking-widest z-30">
+                <div className="absolute bg-white bg-opacity-80 p-10 w-10/12 sm:w-8/12 flex justify-center items-center flex-col text-center tracking-widest z-30">
                     <img src={data.logo.url} alt={data.logo.alt} width="150" className="mx-auto" />
                     <div className="text-gray-800 uppercase text-7xl font-bold font-primaryBold tracking-widest my-10">
                         <RichText render={data.primary_title} />
@@ -35,6 +38,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                     </div>
                 </div>
             </Section>
+            <div className="min-h-screen"></div>
             <Section
                 leftBackgroundColor={common.colors["skin-tone-1"]}
                 rightBackgroundColor={common.colors["skin-tone-3"]}
@@ -45,7 +49,9 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                     backgroundColor: common.colors["skin-tone-1"],
                     horizontal: "right",
                     vertical: "top",
+                    height: 1000,
                 }}
+                height={1000}
             >
                 <div className="relative sm:absolute bg-white p-2 sm:p-10 mt-6 w-full sm:w-10/12 flex justify-center content-center flex-col tracking-widest z-20">
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />

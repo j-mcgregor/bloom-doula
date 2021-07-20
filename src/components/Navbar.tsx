@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { ImageIF } from "@interfaces/prismic-data";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -37,34 +38,41 @@ export const Navbar: React.FC<{ logo: ImageIF }> = ({ logo }) => {
                                 </Disclosure.Button>
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
-                                <div className="flex-shrink-0 flex items-center">
-                                    <img
-                                        className="block lg:hidden h-8 w-auto"
-                                        src={logo.url}
-                                        alt={logo.alt}
-                                    />
-                                    <img
-                                        className="hidden lg:block h-8 w-auto"
-                                        src={logo.url}
-                                        alt={logo.alt}
-                                    />
-                                </div>
+                                <Link href="/">
+                                    <a>
+                                        <div className="flex-shrink-0 flex items-center">
+                                            <img
+                                                className="block lg:hidden h-8 w-auto"
+                                                src={logo.url}
+                                                alt={logo.alt}
+                                            />
+                                            <img
+                                                className="hidden lg:block h-8 w-auto"
+                                                src={logo.url}
+                                                alt={logo.alt}
+                                            />
+                                            <div className="hidden lg:block w-auto font-primaryBold uppercase ml-3 tracking-widest">
+                                                Bloom
+                                            </div>
+                                        </div>
+                                    </a>
+                                </Link>
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
-                                            <a
-                                                key={item.name}
-                                                href={item.href}
-                                                className={classNames(
-                                                    item.current
-                                                        ? "font-semibold"
-                                                        : "text-gray-400 hover:text-gray-500",
-                                                    "px-3 py-2 rounded-md text-sm font-medium"
-                                                )}
-                                                aria-current={item.current ? "page" : undefined}
-                                            >
-                                                {item.name}
-                                            </a>
+                                            <Link key={item.name} href={item.href}>
+                                                <a
+                                                    className={classNames(
+                                                        item.current
+                                                            ? "font-semibold"
+                                                            : "text-gray-400 hover:text-gray-500",
+                                                        "px-3 py-2 rounded-md text-sm font-medium"
+                                                    )}
+                                                    aria-current={item.current ? "page" : undefined}
+                                                >
+                                                    {item.name}
+                                                </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
@@ -75,17 +83,19 @@ export const Navbar: React.FC<{ logo: ImageIF }> = ({ logo }) => {
                     <Disclosure.Panel className="sm:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1">
                             {navigation.map((item) => (
-                                <a
-                                    key={item.name}
-                                    href={item.href}
-                                    className={classNames(
-                                        item.current ? "font-semibold" : "text-gray-400 hover:text-gray-500",
-                                        "block px-3 py-2 rounded-md text-base font-medium"
-                                    )}
-                                    aria-current={item.current ? "page" : undefined}
-                                >
-                                    {item.name}
-                                </a>
+                                <Link key={item.name} href={item.href}>
+                                    <a
+                                        className={classNames(
+                                            item.current
+                                                ? "font-semibold"
+                                                : "text-gray-400 hover:text-gray-500",
+                                            "block px-3 py-2 rounded-md text-base font-medium"
+                                        )}
+                                        aria-current={item.current ? "page" : undefined}
+                                    >
+                                        {item.name}
+                                    </a>
+                                </Link>
                             ))}
                         </div>
                     </Disclosure.Panel>

@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { useState } from "react";
 
 export const Footer = () => {
-    const [mode, setMode] = useState("auto");
     return (
         <footer id="footer" className="relative z-50 dark:bg-gray-900">
             <div className="border-t border-b border-gray-200 dark:border-gray-700 py-16">

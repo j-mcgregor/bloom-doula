@@ -27,16 +27,18 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
 
             <Section
                 reverse
-                leftBackgroundColor={common.colors["skin-tone-3"]}
-                rightBackgroundColor={common.colors["skin-tone-1"]}
+                leftBackgroundColor={common.colors["skin-tone-2"]}
+                rightBackgroundImage={data.body[0].primary.service_image.url}
                 hideLeftOnSmall
                 edge={{
-                    backgroundColor: common.colors["skin-tone-1"],
-                    horizontal: "left",
+                    backgroundColor: common.colors["skin-tone-2"],
+                    horizontal: "right",
                     vertical: "bottom",
+                    height: 500,
                 }}
+                height={500}
             >
-                <div className="relative sm:absolute bg-white p-2 sm:p-16 mt-6 w-full sm:w-10/12 h-3/6 flex items-center justify-center content-center flex-col tracking-widest z-20">
+                <div className="relative sm:absolute bg-white bg-opacity-50 p-2 sm:p-16 mt-6 w-full sm:w-10/12 h-3/6 flex items-center justify-center content-center flex-col tracking-widest z-20">
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
                     <div className="text-gray-800 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-7">
                         <RichText render={data.body[0].primary.title} />
