@@ -28,6 +28,7 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
             <Section
                 reverse
                 leftBackgroundImage={data.contact_image.url}
+                backgroundPosition="left 30%"
                 leftHeight="h-96"
                 leftWidth="w-full sm:w-1/2"
                 rightBackgroundColor={common.colors["skin-tone-1"]}
@@ -81,6 +82,7 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
                     height: 800,
                 }}
                 height={800}
+                equalWidth
             />
         </Container>
     );
