@@ -52,6 +52,8 @@ export interface MainData {
     services_title: RichTextBlock[];
     about_title: RichTextBlock[];
     about_description: RichTextBlock[];
+    summary_title: RichTextBlock[];
+    summary_description: RichTextBlock[];
     about_image: ImageIF;
     contact_title: RichTextBlock[];
     contact_info: ContactIF[];

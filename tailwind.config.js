@@ -9,7 +9,7 @@ module.exports = {
                 "skin-tone-3": "#7d695f",
             },
             fontFamily: {
-                primaryBold: ["FiraSans-Light"],
+                primaryBold: ["Revaux"],
                 primaryRegular: ["FiraSans-Thin"],
             },
         },

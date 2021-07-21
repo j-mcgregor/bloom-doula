@@ -7,6 +7,7 @@ import React from "react";
 import { common } from "@definitions/styled-components";
 import { RichText } from "prismic-reactjs";
 import styled from "styled-components";
+import { AnimateIn } from "@components/AnimateIn";
 
 const StyledList = styled.div`
     ul {
@@ -38,12 +39,15 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
                 }}
                 height={500}
             >
-                <div className="relative sm:absolute bg-white bg-opacity-50 p-2 sm:p-16 mt-6 w-full sm:w-10/12 h-3/6 flex items-center justify-center content-center flex-col tracking-widest z-20">
+                <AnimateIn
+                    triggerOnce
+                    className="relative sm:absolute bg-white bg-opacity-70 p-2 sm:p-16 mt-6 w-full sm:w-10/12 h-3/6 flex items-center justify-center content-center flex-col tracking-widest z-20"
+                >
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
                     <div className="text-gray-800 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-7">
                         <RichText render={data.body[0].primary.title} />
                     </div>
-                </div>
+                </AnimateIn>
             </Section>
 
             <StyledList className="text-gray-800 text-lg text-justify font-primaryRegular w-1/3 mx-auto py-10">

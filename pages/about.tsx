@@ -7,6 +7,7 @@ import React from "react";
 import { common } from "@definitions/styled-components";
 import { RichText } from "prismic-reactjs";
 import styled from "styled-components";
+import { AnimateIn } from "@components/AnimateIn";
 
 const StyledParagraphs = styled.div`
     p {
@@ -26,20 +27,25 @@ const About: React.FC<{ data: MainData }> = ({ data }) => {
                 rightBackgroundImage={data.about_image.url}
                 backgroundPosition="center 30%"
                 leftElement={
-                    <div className="relative sm:absolute p-1 sm:p-10 w-full  flex flex-col items-center justify-center sm:items-start sm:justify-center h-5/6 tracking-widest">
-                        <img src="/logo-clipped-light.png" alt={data.logo.alt} width="110" />
-                        <div className="text-gray-200 uppercase text-6xl font-bold font-primaryBold my-6">
-                            <RichText render={data.about_title} />
+                    <AnimateIn
+                        className="relative sm:absolute p-1 sm:p-10 w-full  flex flex-col items-center justify-center sm:items-start sm:justify-center h-5/6 tracking-widest"
+                        triggerOnce
+                    >
+                        <div>
+                            <img src="/logo-clipped-light.png" alt={data.logo.alt} width="110" />
+                            <div className="text-gray-200 uppercase text-6xl font-bold font-primaryBold my-6">
+                                <RichText render={data.about_title} />
+                            </div>
                         </div>
-                    </div>
+                    </AnimateIn>
                 }
                 edge={{
                     backgroundColor: common.colors["skin-tone-3"],
                     horizontal: "right",
                     vertical: "bottom",
-                    height: 700,
+                    height: 500,
                 }}
-                height={700}
+                height={500}
             />
 
             <StyledParagraphs className="text-gray-800 w-1/2 mx-auto py-20 text-lg font-primaryRegular text-justify">

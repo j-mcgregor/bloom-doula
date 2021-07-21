@@ -10,11 +10,11 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const socialMap = (url: string) => {
     if (url.includes("facebook")) {
-        return <FaFacebook size="40px" />;
+        return <FaFacebook size="20px" />;
     } else if (url.includes("twitter")) {
-        return <FaTwitter size="40px" />;
+        return <FaTwitter size="20px" />;
     } else {
-        return <FaInstagram size="40px" />;
+        return <FaInstagram size="20px" />;
     }
 };
 
@@ -59,18 +59,18 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
                                     </div>
                                 </div>
                             ))}
-                        </div>
-                        <div className="flex justify-center mt-10 sm:mt-3 sm:justify-end">
-                            {data.social_media.map((social) => (
-                                <a
-                                    href={social.platform_name.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="ml-5 text-skin-tone-3 hover:text-pink-400"
-                                >
-                                    {socialMap(social.platform_name.url)}
-                                </a>
-                            ))}
+                            <div className="flex justify-center mt-20 sm:mt-20 sm:justify-end">
+                                {data.social_media.map((social) => (
+                                    <a
+                                        href={social.platform_name.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="ml-5 text-skin-tone-3 hover:text-pink-400"
+                                    >
+                                        {socialMap(social.platform_name.url)}
+                                    </a>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 }
