@@ -41,15 +41,15 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
                                 width="80"
                                 className="float-right mb-10"
                             />
-                            <div className="text-gray-800 uppercase text-5xl font-bold my-7 clear-both font-primaryBold">
+                            <div className="text-skin-tone-3 uppercase text-5xl font-bold my-7 clear-both font-primaryBold">
                                 <RichText render={data.contact_title} />
                             </div>
                             {data.contact_info.map((contact) => (
                                 <div className="my-3">
-                                    <div className="text-gray-600 text-xl font-bold my-1 font-primaryBold">
+                                    <div className="text-skin-tone-3 text-xl font-bold my-1 font-primaryBold">
                                         <RichText render={contact.contact_label} />
                                     </div>
-                                    <div className="text-gray-400 text-xl font-bold my-1 font-primaryRegular">
+                                    <div className="text-gray-600 text-md font-bold my-1 font-primaryRegular">
                                         <a
                                             href={contact.contact_link.url}
                                             target="_blank"

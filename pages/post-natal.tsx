@@ -43,7 +43,7 @@ const PostNatal: React.FC<{ data: MainData }> = ({ data }) => {
                     className="relative sm:absolute bg-white bg-opacity-70 p-2 sm:p-16 mt-6 w-full sm:w-8/12 h-3/6 flex items-center justify-center content-center flex-col tracking-widest z-20 shadow-xl"
                 >
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
-                    <div className="text-gray-800 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-7">
+                    <div className="text-skin-tone-3 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-7">
                         <RichText render={data.body[1].primary.title} />
                     </div>
                 </AnimateIn>
