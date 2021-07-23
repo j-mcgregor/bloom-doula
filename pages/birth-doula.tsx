@@ -38,10 +38,11 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
                     height: 500,
                 }}
                 height={500}
+                heightOnSmall={300}
             >
                 <AnimateIn
                     triggerOnce
-                    className="relative sm:absolute bg-white bg-opacity-70 p-2 sm:p-16 mt-6 w-full sm:w-8/12 h-3/6 flex items-center justify-center content-center flex-col tracking-widest z-20 shadow-xl"
+                    className="absolute bg-white bg-opacity-70 p-2 sm:p-16 sm:mt-6 w-full sm:w-8/12 h-full sm:h-3/6 flex items-center justify-center content-center flex-col tracking-widest z-20 sm:shadow-xl shadow-none"
                 >
                     <img src={data.logo.url} alt={data.logo.alt} width="80" className="mx-auto" />
                     <div className="text-skin-tone-3 uppercase text-2xl sm:text-6xl font-bold text-center font-primaryBold my-7">
@@ -50,7 +51,7 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
                 </AnimateIn>
             </Section>
 
-            <StyledList className="text-gray-800 text-lg text-justify font-primaryRegular w-1/3 mx-auto py-10">
+            <StyledList className="text-gray-800 text-lg text-justify font-primaryRegular sm:w-1/3 w-full p-10 mx-auto py-10">
                 <RichText render={data.body[0].primary.description} />
                 <div className="text-gray-600 text-lg text-justify font-primaryRegular mt-10">
                     <RichText render={data.body[0].primary.find_out_more} />

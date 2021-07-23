@@ -18,6 +18,7 @@ interface SectionProps {
     rightElement?: React.ReactNode;
     edge?: EdgeProps;
     height?: number;
+    heightOnSmall?: number;
     equalWidth?: boolean;
     backgroundPosition?: string;
 }
@@ -27,6 +28,7 @@ interface EdgeProps {
     vertical: "top" | "bottom";
     backgroundColor: string;
     height?: number;
+    hideOnSmall?: boolean;
 }
 
 interface HalfProps {
@@ -35,6 +37,7 @@ interface HalfProps {
     backgroundPosition?: string;
     edge?: EdgeProps;
     height?: number;
+    heightOnSmall?: number;
 }
 
 const Half = styled.div<HalfProps>`
@@ -45,6 +48,14 @@ const Half = styled.div<HalfProps>`
     background-repeat: no-repeat;
     position: relative;
     height: ${({ height }) => `${height}px`};
+    width: 100%;
+    ${({ heightOnSmall }) =>
+        heightOnSmall &&
+        css`
+            @media (max-width: 640px) {
+                height: ${heightOnSmall}px;
+            }
+        `};
 
     ${({ edge }) =>
         edge &&
@@ -57,6 +68,13 @@ const Half = styled.div<HalfProps>`
                 top: 0;
                 width: 0;
                 height: 0;
+                ${({ edge }) =>
+                    edge.hideOnSmall &&
+                    css`
+                        @media (max-width: 640px) {
+                            display: none;
+                        }
+                    `};
 
                 /* dynamic */
 
@@ -100,6 +118,7 @@ export const Section: React.FC<SectionProps> = ({
     children,
     edge,
     height,
+    heightOnSmall,
     equalWidth,
     backgroundPosition,
 }) => {
@@ -111,15 +130,16 @@ export const Section: React.FC<SectionProps> = ({
                 backgroundPosition={backgroundPosition}
                 className={classNames(
                     "sm:h-screen p-10",
-                    equalWidth ? "w-1/2" : reverse ? "flex-grow" : "w-full sm:w-3/12",
+                    equalWidth ? "w-full sm:w-1/2" : reverse ? "flex-grow" : "w-full sm:w-3/12",
                     {
                         "hidden sm:block": hideLeftOnSmall,
                     },
                     leftHeight ? leftHeight : "h-auto",
-                    leftWidth ? leftWidth : "w-auto"
+                    leftWidth ? leftWidth : "w-full sm:w-auto"
                 )}
                 {...(edge && edge.horizontal === "right" && { edge })}
                 height={height}
+                heightOnSmall={heightOnSmall}
             >
                 {leftElement}
             </Half>
@@ -134,10 +154,11 @@ export const Section: React.FC<SectionProps> = ({
                         "hidden sm:block": hideRightOnSmall,
                     },
                     rightHeight ? rightHeight : "h-auto",
-                    rightWidth ? rightWidth : "w-auto"
+                    rightWidth ? rightWidth : "w-full sm:w-auto"
                 )}
                 {...(edge && edge.horizontal === "left" && { edge })}
                 height={height}
+                heightOnSmall={heightOnSmall}
             >
                 {rightElement}
             </Half>

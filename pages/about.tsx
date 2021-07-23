@@ -28,12 +28,12 @@ const About: React.FC<{ data: MainData }> = ({ data }) => {
                 backgroundPosition="center 30%"
                 leftElement={
                     <AnimateIn
-                        className="relative sm:absolute p-1 sm:p-10 w-full  flex flex-col items-center justify-center sm:items-start sm:justify-center h-5/6 tracking-widest"
+                        className="relative sm:absolute p-1 sm:p-10 w-full flex flex-col items-center sm:items-start justify-center h-full sm:h-5/6 tracking-widest"
                         triggerOnce
                     >
-                        <div>
-                            <img src="/logo-clipped-light.png" alt={data.logo.alt} width="110" />
-                            <div className="text-gray-200 uppercase text-6xl font-bold font-primaryBold my-6">
+                        <div className="flex flex-col items-center sm:items-start">
+                            <img src="/logo-clipped-light.png" alt={data.logo.alt} className="w-16 sm:w-32" />
+                            <div className="text-gray-200 uppercase text-2xl sm:text-6xl font-bold font-primaryBold my-6">
                                 <RichText render={data.about_title} />
                             </div>
                         </div>
@@ -44,11 +44,13 @@ const About: React.FC<{ data: MainData }> = ({ data }) => {
                     horizontal: "right",
                     vertical: "bottom",
                     height: 500,
+                    hideOnSmall: true,
                 }}
                 height={500}
+                heightOnSmall={250}
             />
 
-            <StyledParagraphs className="text-gray-800 w-1/2 mx-auto py-20 text-lg font-primaryRegular text-justify">
+            <StyledParagraphs className="text-gray-800 w-full sm:w-1/2 mx-auto p-5 sm:py-20 text-lg font-primaryRegular text-justify">
                 <RichText render={data.about_description} />
             </StyledParagraphs>
         </Container>

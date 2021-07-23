@@ -31,7 +31,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
             >
                 <AnimateIn
                     triggerOnce
-                    className="absolute bg-white bg-opacity-80 p-10 w-10/12 sm:w-8/12 flex justify-center items-center flex-col text-center tracking-widest z-30 shadow-md"
+                    className="absolute bg-white bg-opacity-80 p-10 h-full sm:h-1/2 w-full sm:w-8/12 flex justify-center items-center flex-col text-center tracking-widest z-30 shadow-md"
                 >
                     <img src={data.logo.url} alt={data.logo.alt} width="150" className="mx-auto" />
                     <div className="text-skin-tone-3 uppercase text-7xl font-bold font-primaryBold tracking-widest my-10">
@@ -42,13 +42,13 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                     </div>
                 </AnimateIn>
             </Section>
-            <div className="min-h-screen flex items-center justify-center shadow-inner">
+            <div className="min-h-screen flex items-center justify-center shadow-inner p-10">
                 <AnimateIn triggerOnce>
                     <div className="max-w-3xl">
                         <div className="text-skin-tone-3 uppercase text-2xl font-bold font-primaryBold tracking-widest my-10 ">
                             <RichText render={data.summary_title} />
                         </div>
-                        <div className="text-gray-600 uppercase text-xl font-bold font-primaryRegular leading-10">
+                        <div className="text-gray-600 uppercase text-lg sm:text-xl font-bold font-primaryRegular sm:leading-10">
                             <RichText render={data.summary_description} />
                         </div>
                     </div>
@@ -58,6 +58,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                 leftBackgroundColor={common.colors["skin-tone-1"]}
                 rightBackgroundColor={common.colors["skin-tone-3"]}
                 hideLeftOnSmall
+                hideRightOnSmall
                 rightHeight="h-10"
                 rightWidth="w-full sm:w-1/2"
                 edge={{
