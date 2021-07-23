@@ -65,7 +65,7 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
             <Section
                 reverse
                 leftBackgroundImage={data.contact_image.url}
-                // hideLeftOnSmall
+                hideRightOnSmall
                 backgroundPosition="left 30%"
                 leftHeight="h-96"
                 leftWidth="w-full sm:w-1/2"
@@ -82,10 +82,10 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
                     height: 800,
                 }}
                 height={800}
-                heightOnSmall={250}
+                heightOnSmall={200}
                 equalWidth
             />
-            <div className="w-full h-full p-2 pb-10 sm:hidden flex flex-col items-center justify-between tracking-widest bg-skin-tone-1 text-center">
+            <div className="w-full h-full p-2 py-14 sm:hidden flex flex-col items-center justify-between tracking-widest bg-skin-tone-1 text-center">
                 {content}
             </div>
         </Container>

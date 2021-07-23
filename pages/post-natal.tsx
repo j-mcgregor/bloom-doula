@@ -50,7 +50,7 @@ const PostNatal: React.FC<{ data: MainData }> = ({ data }) => {
                 </AnimateIn>
             </Section>
 
-            <StyledList className="text-gray-800 text-lg text-justify font-primaryRegular sm:w-1/3 w-full p-10 mx-auto py-10">
+            <StyledList className="text-gray-900 font-bold text-lg text-justify font-primaryRegular sm:w-1/3 w-full p-10 mx-auto py-10">
                 <RichText render={data.body[1].primary.description} />
                 <div className="text-gray-600 text-lg text-justify font-primaryRegular mt-10">
                     <RichText render={data.body[1].primary.find_out_more} />

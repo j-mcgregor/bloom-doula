@@ -27,6 +27,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                     height: 800,
                 }}
                 height={800}
+                heightOnSmall={400}
                 equalWidth
             >
                 <AnimateIn
