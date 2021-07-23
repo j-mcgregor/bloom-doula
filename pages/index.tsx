@@ -27,7 +27,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                     height: 800,
                 }}
                 height={800}
-                heightOnSmall={400}
+                heightOnSmall={500}
                 equalWidth
             >
                 <AnimateIn
@@ -35,10 +35,10 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                     className="absolute bg-white bg-opacity-80 p-10 h-full sm:h-1/2 w-full sm:w-8/12 flex justify-center items-center flex-col text-center tracking-widest z-30 shadow-md"
                 >
                     <img src={data.logo.url} alt={data.logo.alt} width="150" className="mx-auto" />
-                    <div className="text-skin-tone-3 uppercase text-7xl font-bold font-primaryBold tracking-widest my-10">
+                    <div className="text-skin-tone-3 uppercase text-4xl sm:text-7xl font-bold font-primaryBold tracking-widest my-10">
                         <RichText render={data.primary_title} />
                     </div>
-                    <div className="text-gray-600 uppercase text-xl font-bold font-primaryRegular">
+                    <div className="text-gray-600 uppercase text-lg sm:text-xl font-bold font-primaryRegular">
                         <RichText render={data.primary_subtitle} />
                     </div>
                 </AnimateIn>
