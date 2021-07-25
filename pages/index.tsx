@@ -14,6 +14,10 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
         <Container logo={data.logo}>
             <Head>
                 <title>Bloom Doula</title>
+                <meta name="description" content="" />
+                <meta property="og:title" content="Bloom Doula" />
+                <meta property="og:url" content="http://www.bloomdoula.co.uk/" />
+                <meta property="og:description" content="To enter motherhood from the best possible place" />
             </Head>
             <Section
                 leftBackgroundImage={data.primary_image.url}

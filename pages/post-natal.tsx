@@ -23,6 +23,10 @@ const PostNatal: React.FC<{ data: MainData }> = ({ data }) => {
         <Container logo={data.logo}>
             <Head>
                 <title>Post Natal | Bloom Doula</title>
+                <meta name="description" content="" />
+                <meta property="og:title" content="Bloom Doula" />
+                <meta property="og:url" content="http://www.bloomdoula.co.uk/post-natal" />
+                <meta property="og:description" content="To enter motherhood from the best possible place" />
             </Head>
 
             <Section
