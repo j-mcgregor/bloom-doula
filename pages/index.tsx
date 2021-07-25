@@ -91,12 +91,12 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
                                     <div className="text-skin-tone-3 uppercase text-xl font-bold text-center font-primaryBold my-7">
                                         <RichText render={service.primary.title} />
                                     </div>
-                                    <div className="text-gray-600 text-lg text-justify font-bold font-primaryRegular mb-2">
+                                    <div className="text-gray-600 text-lg text-left font-bold font-primaryRegular mb-2">
                                         <RichText render={service.primary.subtitle} />
                                     </div>
                                 </div>
                                 <Link href={`/${service.primary.page_link}`}>
-                                    <a className="font-primaryRegular">
+                                    <a className="font-primaryRegular underline">
                                         <RichText render={service.primary.button_label} />
                                     </a>
                                 </Link>
