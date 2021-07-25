@@ -63,7 +63,10 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
                 <meta name="description" content="" />
                 <meta property="og:title" content="Bloom Doula" />
                 <meta property="og:url" content="http://www.bloomdoula.co.uk/contact" />
-                <meta property="og:description" content="To enter motherhood from the best possible place" />
+                <meta
+                    property="og:description"
+                    content="Bloom is a service offering support to pregnant women during their birth and in the first 3 months after the arrival of their baby."
+                />
             </Head>
 
             <Section
