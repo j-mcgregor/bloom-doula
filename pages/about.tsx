@@ -18,7 +18,7 @@ const About: React.FC<{ data: MainData }> = ({ data }) => {
     return (
         <Container logo={data.logo}>
             <Head>
-                <title>About | Bloom Births</title>
+                <title>About | Bloom Doula</title>
             </Head>
 
             <Section

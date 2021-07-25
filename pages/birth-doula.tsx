@@ -23,7 +23,7 @@ const BirthDoula: React.FC<{ data: MainData }> = ({ data }) => {
     return (
         <Container logo={data.logo}>
             <Head>
-                <title>Birth Doula | Bloom Births</title>
+                <title>Birth Doula | Bloom Doula</title>
             </Head>
 
             <Section

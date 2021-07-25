@@ -13,7 +13,7 @@ const Home: React.FC<{ data: MainData }> = ({ data }) => {
     return (
         <Container logo={data.logo}>
             <Head>
-                <title>Bloom Births</title>
+                <title>Bloom Doula</title>
             </Head>
             <Section
                 leftBackgroundImage={data.primary_image.url}

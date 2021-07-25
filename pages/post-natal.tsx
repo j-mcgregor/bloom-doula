@@ -22,7 +22,7 @@ const PostNatal: React.FC<{ data: MainData }> = ({ data }) => {
     return (
         <Container logo={data.logo}>
             <Head>
-                <title>Post Natal | Bloom Births</title>
+                <title>Post Natal | Bloom Doula</title>
             </Head>
 
             <Section
